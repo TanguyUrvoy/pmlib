@@ -21,6 +21,9 @@ from pmcells import *
 from basicFeedexp3 import BasicFeedexp3, optimal_Feedexp3_parameters
 from generalFeedexp3 import transform_matrices, GeneralFeedexp3, check_matrices_transformation
 
+# adhoc policies
+from rex3 import *
+
 
 # tools include parallelized routines for stochastic environement simulation and
 # regret curves plotting

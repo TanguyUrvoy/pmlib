@@ -116,6 +116,7 @@ def BernoulliBandit(Arms):
     
     
     pm.Outcomes_dict = { a : "{0:b}".format(a).zfill(int(log(pm.M,2))) for a in range(pm.M)}
+    pm.Actions_dict= { a : "arm {0}".format(a) for a in range(K) }
   
     ## 1 - Each outcome is a binary reward vector of dimension K encoded as an integer
     for x in range(pm.M):
@@ -131,7 +132,7 @@ def BernoulliBandit(Arms):
     for a in range(K):
         for x in range(pm.M):
             pm.LossMatrix[a,x] = 1.0 - arm_reward(x,a,K)
-            pm.FeedbackMatrix[a,x] = 1.0 - arm_reward(x,a,K)
+            pm.FeedbackMatrix[a,x] = arm_reward(x,a,K)
             if arm_reward(x,a,K):
                 pm.FeedbackMatrix_symb[a,x] = 'win '
             else:
@@ -295,8 +296,9 @@ def LabelEfficientPrediction(Dist):
     
     return pm
 
-benchmark_games.append(LabelEfficientPrediction([0.5,0.5]))
-benchmark_names.append("Label efficient prediction")
+#FIXME: there is a bug around
+#benchmark_games.append(LabelEfficientPrediction([0.75,0.25]))
+#benchmark_names.append("Label efficient prediction")
                 
 
 ###################################
