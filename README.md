@@ -16,8 +16,9 @@ This library is based on the the Parma Polyhedra Library for the "Cell decompoti
 http://bugseng.com/products/ppl/
 You must intall this library and its python wrapper to use pmlib:
 https://pypi.python.org/pypi/pplpy/0.6
+We also use numpy, scipy and pandas.
+https://docs.scipy.org/doc/scipy/reference/generated/scipy.misc.logsumexp.html
 
-We also use numpy, scikitlearn and pandas.
 
 We plan to add several generic PM algorithm, but the present version only include FeedExp3 and its variants.
 See http://archive.cone.informatik.uni-freiburg.de/pubs/siim-tr-00-18.pdf or 
