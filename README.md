@@ -22,7 +22,7 @@ http://proceedings.mlr.press/v37/gajane15.html
 
 
 # install guide
-This library is based on the the Parma Polyhedra Library for the "Cell decompotion":
+This library is based on the the Parma Polyhedra Library for the "Cell decomposition":
 * http://bugseng.com/products/ppl/
 
 You must intall this library and its python wrapper to use pmlib:
