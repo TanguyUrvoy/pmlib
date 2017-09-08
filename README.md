@@ -5,9 +5,9 @@ Partial Monitoring(PM) is a general framework for sequential decision making wit
 PM gneralizes a host of problems including for instance: multi-armed bandits, prediction with expert 
 advices, dynamic pricing, apple tasting, dark pools, label efficient prediction or dueling bandits.
 
-Each problem is formalized by a couple of NxM matrices L and H.
+Each problem is formalized by a couple of NxM matrices L and F.
 At each step of the game, the learner chooses an action i and the environment chooses an outome j.
-L(i,j) gives the loss of action i for outome j and H(i,j) gives a (symbolic) feedback for this situation.
+L(i,j) gives the loss of action i for outome j and F(i,j) gives a (symbolic) feedback for this situation.
 
 See N. Cesa-Bianchi, G. Lugosi "Prediction, Learning, and Games" 2006 on chapter 6 for an introduction:
 http://homes.dsi.unimi.it/~cesabian/predbook/
