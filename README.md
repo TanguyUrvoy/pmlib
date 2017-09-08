@@ -21,7 +21,7 @@ http://proceedings.mlr.press/v37/gajane15.html
 
 
 
-# installation
+# install guide
 This library is based on the the Parma Polyhedra Library for the "Cell decompotion":
 http://bugseng.com/products/ppl/
 
@@ -30,6 +30,3 @@ https://pypi.python.org/pypi/pplpy/0.6
 
 We also use numpy, scipy and pandas.
 https://docs.scipy.org/doc/scipy/reference/generated/scipy.misc.logsumexp.html
-
-
-
