@@ -2,12 +2,12 @@
 A python library for (finite) Partial Monitoring algorithms
 
 Partial Monitoring(PM) is a general framework for sequential decision making with imperfect feedback.
-PM gneralizes a host of problems including for instance: multi-armed bandits, prediction with expert 
-advices, dynamic pricing, apple tasting, dark pools, label efficient prediction or dueling bandits.
+PM generalizes a host of problems including for instance multi-armed bandits, prediction with expert 
+advices, dynamic pricing, apple tasting, dark pools, label efficient prediction and dueling bandits.
 
 Each problem is formalized by a couple of NxM matrices L and F.
 At each step of the game, the learner chooses an action i and the environment chooses an outome j.
-L(i,j) gives the loss of action i for outome j and F(i,j) gives a (symbolic) feedback for this situation.
+L(i,j) gives the loss of action i for outome j and F(i,j) gives a (symbolic or numeric) feedback for this situation.
 
 See N. Cesa-Bianchi, G. Lugosi "Prediction, Learning, and Games" 2006 on chapter 6 for an introduction:
 http://homes.dsi.unimi.it/~cesabian/predbook/
@@ -16,6 +16,8 @@ This library is based on the the Parma Polyhedra Library for the "Cell decompoti
 http://bugseng.com/products/ppl/
 You must intall this library and its python wrapper to use pmlib:
 https://pypi.python.org/pypi/pplpy/0.6
+
+We also use numpy, scikitlearn and pandas.
 
 We plan to add several generic PM algorithm, but the present version only include FeedExp3 and its variants.
 See http://archive.cone.informatik.uni-freiburg.de/pubs/siim-tr-00-18.pdf or 
