@@ -9,6 +9,7 @@ Each problem is formalized by a couple of NxM matrices L and F.
 At each step of the game, the learner chooses an action i and the environment chooses an outome j.
 L(i,j) gives the loss of action i for outome j and F(i,j) gives a (symbolic or numeric) feedback for this situation.
 
+
 See N. Cesa-Bianchi, G. Lugosi "Prediction, Learning, and Games" 2006 on chapter 6 for an introduction:
 http://homes.dsi.unimi.it/~cesabian/predbook/
 
@@ -20,6 +21,13 @@ We also provide Rex3, an adhoc algorithm for dueling bandits:
 http://proceedings.mlr.press/v37/gajane15.html
 
 
+The Function pmlib.problemClass() can analyzes any game and provide its position in the PM complexity hierarchy.
+This can be either:
+* trivial 
+* easy
+* hard
+* intractable
+See Bartok et al. "Partial monitoring – classification, regret bounds, and algorithms" 2013.
 
 # install guide
 This library is based on the the Parma Polyhedra Library for the "Cell decomposition":
