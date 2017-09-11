@@ -21,13 +21,14 @@ We also provide Rex3, an adhoc algorithm for dueling bandits:
 http://proceedings.mlr.press/v37/gajane15.html
 
 
-The Function pmlib.problemClass() can analyzes any game and provide its position in the PM complexity hierarchy.
+The Function pmlib.problemClass(game) can analyze any game and provide its position in the PM complexity hierarchy as defined in
+(Bartok et al. "Partial monitoring – classification, regret bounds, and algorithms" 2013).
 This can be either:
-* trivial 
-* easy
-* hard
-* intractable
-See Bartok et al. "Partial monitoring – classification, regret bounds, and algorithms" 2013.
+* TRIVIAL if a single action domines all others. It gives a constant regret.
+* EASY if it is hard but all neighbouring actions are locally observable. It gives a regret in \sqrt(T).
+* HARD if all pairs of actions are globally observable. It gives a regret in T^{2/3}.
+* INTRACTABLE if some pairs of actions are non globally observable.
+
 
 # install guide
 This library is based on the the Parma Polyhedra Library for the "Cell decomposition":
