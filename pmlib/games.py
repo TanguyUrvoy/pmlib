@@ -5,7 +5,7 @@ Provides a collection of Finite Partial Monitoring algorithms for experimental s
 """
 __author__ = "Tanguy Urvoy, Pratik Gajane"
 __copyright__ = "Orange-labs 2017"
-__license__ = ""
+__license__ = "LGPL"
 __version__ = "1.0"
 __email__ = "tanguy.urvoy@orange.com, pratik.gajane@gmail.Com"
 __date__ = "2017"
@@ -262,6 +262,40 @@ benchmark_names.append("Apple tasting (supermarket)")
 # FIXME: todo
 
 
+####################################
+### A simple intractable problem ###
+####################################
+
+
+# Generate a trivially intractable PM game
+def Intractable(Dist):
+    pm = PMGame(2,2,"Intractable") # It's a PM Game with 2 actions and 2 outcomes
+    pm.game_type = "intractable"    
+    assert len(Dist) == 2
+    pm.OutcomeDist = np.array(Dist, dtype=float)
+    pm.OutcomeDist /= pm.OutcomeDist.sum()
+        
+    pm.LossMatrix = np.array(
+     [[1, 0],
+      [0, 1]], dtype = np.float)
+
+    pm.FeedbackMatrix = np.array(
+        [[1, 1],
+         [2, 2]], dtype=np.float)
+
+    pm.FeedbackMatrix_symb = np.array(
+        [['maybe', 'maybe'],
+         ['who-knows', 'who-kowns']], dtype=object)
+
+    pm.Actions_dict = { 0:'ask', 1:'not-ask'}
+    pm.Outcomes_dict = { 0:'no', 1:'yes'}
+    
+    return pm
+
+
+benchmark_games.append(Intractable([0.75,0.25]))
+benchmark_names.append("Intractable")
+
 ######################################
 ### Label efficient online learning ##
 ######################################
@@ -271,7 +305,7 @@ benchmark_names.append("Apple tasting (supermarket)")
 # where the learner has to pay to get feedback
 # See [N.Cesa-Bianchi & G. Lugosi 'PRediction Learning and Games', 2006] chapter 6
 def LabelEfficientPrediction(Dist):
-    pm = PMGame(2,2,"Label-efficient prediction") # It's a PM Game with 2 actions and 2 outcomes
+    pm = PMGame(3,2,"Label-efficient prediction") # It's a PM Game with 2 actions and 2 outcomes
     pm.game_type = "label-efficient"    
     assert len(Dist) == 2
     pm.OutcomeDist = np.array(Dist, dtype=float)
@@ -296,9 +330,9 @@ def LabelEfficientPrediction(Dist):
     
     return pm
 
-#FIXME: there is a bug around
-#benchmark_games.append(LabelEfficientPrediction([0.75,0.25]))
-#benchmark_names.append("Label efficient prediction")
+#FIXME: there was a bug around
+benchmark_games.append(LabelEfficientPrediction([0.75,0.25]))
+benchmark_names.append("Label efficient prediction")
                 
 
 ###################################
@@ -357,7 +391,12 @@ benchmark_games.append(BinaryUtilityDuelingBanditPM([0.9,0.5,0.1]))
 benchmark_names.append("Easy Dueling Bandit")
 benchmark_games.append(BinaryUtilityDuelingBanditPM([0.6,0.5,0.5,0.5]))
 benchmark_names.append("Hard Dueling Bandit")
-                       
+
+
+
+
+
+
 
 if __name__ == "__main__":
 
