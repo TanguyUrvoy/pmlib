@@ -32,7 +32,7 @@ This can be either:
 * **HARD** if all pairs of actions are globally observable. It gives a regret in T^{2/3}.
 * **INTRACTABLE** if some pairs of actions are non globally observable.
 
-## install guide
+## Install guide
 This library is based on the the Parma Polyhedra Library for the "Cell decomposition":
 * http://bugseng.com/products/ppl/
 
