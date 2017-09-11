@@ -7,9 +7,10 @@ Partial Monitoring(PM) is a general framework for sequential decision making wit
 PM generalizes a host of problems including for instance multi-armed bandits, prediction with expert 
 advices, dynamic pricing, apple tasting, dark pools, label efficient prediction and dueling bandits.
 
-Each problem is formalized by a couple of NxM matrices L and F.
-At each step of the game, the learner chooses an action i and the environment chooses an outome j.
-L(i,j) gives the loss of action i for outome j and F(i,j) gives a (symbolic or numeric) feedback for this situation.
+Each problem is formalized by a couple of <img src="https://latex.codecogs.com/gif.latex?N\times{}M"/> matrices <img src="https://latex.codecogs.com/gif.latex?L"/> and <img src="https://latex.codecogs.com/gif.latex?F"/>.
+At each step of the game, the learner chooses an action <img src="https://latex.codecogs.com/gif.latex?i"/> and the environment chooses an outome <img src="https://latex.codecogs.com/gif.latex?j"/>.
+<img src="https://latex.codecogs.com/gif.latex?L_{i,j}"/> gives the loss of action <img src="https://latex.codecogs.com/gif.latex?i"/> for outome <img src="https://latex.codecogs.com/gif.latex?j"/> and <img src="https://latex.codecogs.com/gif.latex?F_{i,j}"/> gives a (symbolic or numeric) feedback for this situation.
+The aim of the learner is to control her regret against an informed policy.
 
 See N. Cesa-Bianchi, G. Lugosi "Prediction, Learning, and Games" 2006 on chapter 6 for an introduction:
 http://homes.dsi.unimi.it/~cesabian/predbook/
