@@ -44,7 +44,7 @@ class PMGame(object):
     # print game matrices and plot outcomes distribution
     # if plot is true : output a distribution plot
     # if nice is true use panda for nice jupyter output
-    def dump(self, plot = False, nice = False):
+    def dump(self, plot = False, nice = False, show_numeric=False):
         if(len(self.title)>0):        
             print "***** " + self.title + " *****"
         print "Actions: N=" +str(self.N),"Outcomes: M=" + str(self.M)
@@ -69,12 +69,13 @@ class PMGame(object):
             display(df_feedback)
         else:
             print self.FeedbackMatrix_symb
-        print "Feedback Matrix (numeric form):"
-        if nice:
-            df_feedback = pandas.DataFrame(self.FeedbackMatrix, columns=self.Outcomes_dict.values(), index=self.Actions_dict.values())
-            display(df_feedback)
-        else:
-            print self.FeedbackMatrix
+        if show_numeric:
+            print "Feedback Matrix (numeric form):"
+            if nice:
+                df_feedback = pandas.DataFrame(self.FeedbackMatrix, columns=self.Outcomes_dict.values(), index=self.Actions_dict.values())
+                display(df_feedback)
+            else:
+                print self.FeedbackMatrix
         
         print
         print "Outcomes distribution (for stochastic games):"
@@ -258,9 +259,26 @@ benchmark_names.append("Apple tasting (supermarket)")
 ### Full-feedback online learning PM problem  ###
 #################################################
 
-# like Horse race?
-# FIXME: todo
+def FullFeedback(Dist = [0.1,0.6,0.1,0.2]):
+    N = len(Dist)
+    pm = PMGame(N, N, "Full-information (horse race)")
+    pm.game_type ="full-feedback"
+    pm.OutcomeDist = np.array(Dist, dtype=np.float)
+    pm.OutcomeDist /= pm.OutcomeDist.sum()
 
+    pm.LossMatrix = 1 - np.diag(np.ones(N))
+    pm.FeedbackMatrix = np.vstack([np.array(range(N)) for i in range(N)])
+    pm.FeedbackMatrix_symb = pm.FeedbackMatrix
+    
+    pm.Actions_dict = { i:"bet on horse " + str(i) for i in range(N)}
+    pm.Outcomes_dict = { j:str(j) for j in range(N) }
+    return pm
+
+
+
+benchmark_games.append(FullFeedback())
+benchmark_names.append("Horse race")
+    
 
 ####################################
 ### A simple intractable problem ###
@@ -285,7 +303,7 @@ def Intractable(Dist):
 
     pm.FeedbackMatrix_symb = np.array(
         [['maybe', 'maybe'],
-         ['who-knows', 'who-kowns']], dtype=object)
+         ['who-knows', 'who-knows']], dtype=object)
 
     pm.Actions_dict = { 0:'ask', 1:'not-ask'}
     pm.Outcomes_dict = { 0:'no', 1:'yes'}
@@ -404,9 +422,8 @@ if __name__ == "__main__":
     for i in range(len(benchmark_games)):
         print
         print
-        print "*****", benchmark_names[i], "*****"
         game = benchmark_games[i]
-        game.dump(plot=False) # set plot=True to plot the outcome distributions
+        game.dump(plot=False, nice=True) # set plot=True to plot the outcome distributions
 
 
 
