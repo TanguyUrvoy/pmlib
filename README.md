@@ -12,7 +12,7 @@ L(i,j) gives the loss of action i for outome j and F(i,j) gives a (symbolic or n
 See N. Cesa-Bianchi, G. Lugosi "Prediction, Learning, and Games" 2006 on chapter 6 for an introduction:
 http://homes.dsi.unimi.it/~cesabian/predbook/
 
-We plan to add several generic PM algorithm, but the present version only include FeedExp3 and its variants.
+We plan to add several generic PM algorithm, but the present version only includes FeedExp3 and its variants.
 See http://archive.cone.informatik.uni-freiburg.de/pubs/siim-tr-00-18.pdf or 
 http://stoltz.perso.math.cnrs.fr/Publications/CBLS-pmonit.pdf
 
