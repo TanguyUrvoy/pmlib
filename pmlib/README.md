@@ -1,6 +1,6 @@
 # This is the python package folder
 
-* games.py : several PM games definitions
+* games.py : several finite PM games definitions
 * policies.py : genric policy
 * basicFeedexp3.py : Feedexp3 when L=KF
 * generalFeedexp3.py : general Feedexp3
