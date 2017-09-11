@@ -28,8 +28,8 @@ The Function `pmlib.problemClass(game)` can analyze any game and provide its pos
 (Bartok et al. "Partial monitoring – classification, regret bounds, and algorithms" 2013).
 This can be either:
 * **TRIVIAL** if a single action domines all others. It gives a constant regret.
-* **EASY** if it is hard but all neighbouring actions are locally observable. It gives a regret in \sqrt(T).
-* **HARD** if all pairs of actions are globally observable. It gives a regret in T^{2/3}.
+* **EASY** if it is hard but all neighbouring actions are locally observable. It gives a regret in <img src="https://latex.codecogs.com/gif.latex?\Theta(\sqrt{T})"/>.
+* **HARD** if all pairs of actions are globally observable. It gives a regret in <img src="https://latex.codecogs.com/gif.latex?\Theta(T^{2/3})"/>.
 * **INTRACTABLE** if some pairs of actions are non globally observable.
 
 ## Install guide
