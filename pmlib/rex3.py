@@ -6,13 +6,12 @@ This is REX3, a specialized (adhoc) algorithm for dueling bandits
 (see P. Gajane et al. "Non-stochastic utility-based dueling bandits" ICML 2015)
 """
 __author__ = "Tanguy Urvoy, Pratik Gajane"
-__copyright__ = "Orange-labs 2017"
-__license__ = "LGPL"
-__version__ = "1.0"
-__email__ = "tanguy.urvoy@orange.com, pratik.gajane@gmail.Com"
+__license__ = "GPL"
+__copyright__ = "Orange-labs, France"
+__version__ = "1.2"
+__email__ = "tanguy.urvoy@orange.com, pratik.gajane@gmail.com"
 __date__ = "2017"
 __status__ = "Beta"
-
 
 from policies import BasicPolicy
 import numpy as np

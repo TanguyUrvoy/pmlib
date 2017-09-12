@@ -3,11 +3,11 @@
 """Partial Monitoring Library:
 Provides a collection of Finite Partial Monitoring algorithms for experimental studies.
 """
-__author__ = "Tanguy Urvoy, Pratik Gajane"
-__copyright__ = "Orange-labs 2017"
-__license__ = "LGPL"
-__version__ = "1.0"
-__email__ = "tanguy.urvoy@orange.com, pratik.gajane@gmail.Com"
+__author__ = "Tanguy Urvoy"
+__copyright__ = "Orange-labs, France"
+__license__ = "GPL"
+__version__ = "1.2"
+__email__ = "tanguy.urvoy@orange.com"
 __date__ = "2017"
 __status__ = "Beta"
 
@@ -327,6 +327,7 @@ def LabelEfficientPrediction(Dist):
     pm.game_type = "label-efficient"    
     assert len(Dist) == 2
     pm.OutcomeDist = np.array(Dist, dtype=float)
+    pm.OutcomeDist /= pm.OutcomeDist.sum()
     
     pm.LossMatrix = np.array(
      [[1, 1],
