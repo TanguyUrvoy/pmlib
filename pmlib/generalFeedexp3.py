@@ -3,11 +3,13 @@
 """Partial Monitoring Library:
 Provides a collection of Finite Partial Monitoring algorithms for experimental studies.
 """
+
+
 __author__ = "Tanguy Urvoy, Pratik Gajane"
-__copyright__ = "Orange-labs 2017"
-__license__ = ""
-__version__ = "1.0"
-__email__ = "tanguy.urvoy@orange.com, pratik.gajane@gmail.Com"
+__copyright__ = "Orange-labs, France"
+__license__ = "GPL"
+__version__ = "1.2"
+__email__ = "tanguy.urvoy@orange.com, pratik.gajane@gmail.com"
 __date__ = "2017"
 __status__ = "Beta"
 
