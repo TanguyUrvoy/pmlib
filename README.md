@@ -36,7 +36,7 @@ This can be either:
 ## Install guide
 This library is based on the the Parma Polyhedra Library for the "Cell decomposition":
 * http://bugseng.com/products/ppl/
-See R. Bagnara et al.. "The Parma Polyhedra Library: Toward a complete set of numerical abstractions for the analysis and verification of hardware and software systems." Science of Computer Programming, 72(1-2):3-21, 2008
+* Reference: R. Bagnara et al.. "The Parma Polyhedra Library: Toward a complete set of numerical abstractions for the analysis and verification of hardware and software systems." Science of Computer Programming, 72(1-2):3-21, 2008
 
 You must intall this library and its python wrapper to use pmlib:
 * https://pypi.python.org/pypi/pplpy/0.6
