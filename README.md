@@ -29,13 +29,14 @@ The Function `pmlib.problemClass(game)` can analyze any game and provide its pos
 (Bartok et al. "Partial monitoring – classification, regret bounds, and algorithms" 2013).
 This can be either:
 * **TRIVIAL** if a single action domines all others. It gives a constant regret.
-* **EASY** if it is hard but all neighbouring actions are locally observable. It gives a regret in <img src="https://latex.codecogs.com/gif.latex?\Theta(\sqrt{T})"/>.
-* **HARD** if all pairs of actions are globally observable. It gives a regret in <img src="https://latex.codecogs.com/gif.latex?\Theta(T^{2/3})"/>.
+* **EASY** if all pairs of actions are globally observable and all neighbouring actions are locally observable. It gives a min-max regret in <img src="https://latex.codecogs.com/gif.latex?\Theta(\sqrt{T})"/>.
+* **HARD** if all pairs of actions are globally observable. It gives a min-max regret in <img src="https://latex.codecogs.com/gif.latex?\Theta(T^{2/3})"/>.
 * **INTRACTABLE** if some pairs of actions are non globally observable.
 
 ## Install guide
 This library is based on the the Parma Polyhedra Library for the "Cell decomposition":
 * http://bugseng.com/products/ppl/
+* R. Bagnara et al.. "The Parma Polyhedra Library: Toward a complete set of numerical abstractions for the analysis and verification of hardware and software systems." Science of Computer Programming, 72(1-2):3-21, 2008
 
 You must intall this library and its python wrapper to use pmlib:
 * https://pypi.python.org/pypi/pplpy/0.6
